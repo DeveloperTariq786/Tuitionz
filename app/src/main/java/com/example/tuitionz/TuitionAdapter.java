@@ -1,10 +1,12 @@
 package com.example.tuitionz;
 
 import android.content.Context;
-import android.media.Rating;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -13,25 +15,22 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.List;
 
-public class TuitionAdapter extends RecyclerView.Adapter<TuitionAdapter.viewHolder> {
+public class TuitionAdapter extends RecyclerView.Adapter<TuitionAdapter.viewHolder> implements Filterable{
     ArrayList<TuitionModalClass> list;
     Context context;
+    ArrayList<TuitionModalClass> newlist;
 
     public TuitionAdapter(ArrayList<TuitionModalClass> list, Context context) {
         this.list = list;
         this.context = context;
-    }
-    public void filterlist(List<TuitionModalClass> list1){
-        this.list= (ArrayList<TuitionModalClass>) list1;
-        notifyDataSetChanged();
+        newlist=new ArrayList<>(list);
     }
 
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-       View view= LayoutInflater.from(context).inflate(R.layout.example,parent,false);
+       View view= LayoutInflater.from(context).inflate(R.layout.fronttuitionlayout,parent,false);
         return new viewHolder(view);
     }
 
@@ -41,12 +40,51 @@ public class TuitionAdapter extends RecyclerView.Adapter<TuitionAdapter.viewHold
        holder.tuitionimg.setImageResource(modalClass.getTuitionImage());
        holder.address.setText(modalClass.getAddress());
        holder.rating.setRating(modalClass.getRating());
+       holder.itemView.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent=new Intent(context,DetailTuitionActivity.class);
+               context.startActivity(intent);
+           }
+       });
     }
 
     @Override
     public int getItemCount() {
         return list.size();
     }
+
+    @Override
+    public Filter getFilter() {
+        return newFilter;
+    }
+    final Filter newFilter=new Filter() {
+        @Override
+        protected FilterResults performFiltering(CharSequence keyword) {
+           ArrayList<TuitionModalClass> filterlist = new ArrayList<>();
+           if (keyword==null||keyword.length()==0){
+               filterlist.addAll(list);
+           }
+           else {
+
+               for (TuitionModalClass modalClass: newlist){
+                   if (modalClass.Address.toLowerCase().trim().contains(keyword.toString().toLowerCase()))
+                       filterlist.add(modalClass);
+               }
+           }
+           FilterResults results=new FilterResults();
+           results.values= filterlist;
+           return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
+            list.clear();
+          list.addAll((ArrayList)filterResults.values);
+           notifyDataSetChanged();
+
+        }
+    };
 
     public class viewHolder extends RecyclerView.ViewHolder {
         ImageView tuitionimg;

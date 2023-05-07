@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
+    app:cardBackgroundColor="@color/bluematch"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="20dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="3dp"
+            app:cardCornerRadius="120dp"
+            app:cardElevation="40dp">
+
+            <ImageView
+                android:id="@+id/facultyProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/newimg"></ImageView>
+        </androidx.cardview.widget.CardView>
+
+        <RatingBar
+            android:id="@+id/facultyrate"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="2dp"
+            android:numStars="5"
+            android:stepSize="0.5"></RatingBar>
+
+        <TextView
+            android:id="@+id/facultyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Name Of Faculty"
+            android:textSize="14sp"></TextView>
+
+        <TextView
+            android:id="@+id/facultyReviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Reviews"
+            android:textSize="12dp"
+            tools:ignore="TextSizeCheck" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

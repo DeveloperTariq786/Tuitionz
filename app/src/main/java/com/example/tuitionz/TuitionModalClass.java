@@ -1,5 +1,7 @@
 package com.example.tuitionz;
 
+import java.util.Comparator;
+
 public class TuitionModalClass {
     int TuitionImage;
     String Address;
@@ -33,5 +35,6 @@ public class TuitionModalClass {
 
     public void setRating(float rating) {
         Rating = rating;
+
     }
 }

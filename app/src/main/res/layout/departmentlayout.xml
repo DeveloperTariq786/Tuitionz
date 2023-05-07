@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="3dp"
+    android:layout_marginTop="7dp"
+    app:cardBackgroundColor="@color/bluematch"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="10dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/Dimage"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/newimg"></ImageView>
+
+        <RatingBar
+            android:id="@+id/Drating"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="3dp"
+            android:numStars="5"
+            android:stepSize="0.5"></RatingBar>
+
+        <TextView
+            android:id="@+id/subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="3dp"
+            android:text="Subject"
+            android:textColor="#F3EFEF"
+            android:textSize="12dp"
+            tools:ignore="TextSizeCheck">
+
+        </TextView>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
