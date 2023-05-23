@@ -2,13 +2,11 @@ package com.example.tuitionz;
 
 public class FacultyDetailModal {
     String fname;
-    String freview;
     int fimage;
     float frating;
 
-    public FacultyDetailModal(String fname, String freview, int fimage, float frating) {
+    public FacultyDetailModal(String fname,int fimage, float frating) {
         this.fname = fname;
-        this.freview = freview;
         this.fimage = fimage;
         this.frating = frating;
     }
@@ -21,13 +19,6 @@ public class FacultyDetailModal {
         this.fname = fname;
     }
 
-    public String getFreview() {
-        return freview;
-    }
-
-    public void setFreview(String freview) {
-        this.freview = freview;
-    }
 
     public int getFimage() {
         return fimage;

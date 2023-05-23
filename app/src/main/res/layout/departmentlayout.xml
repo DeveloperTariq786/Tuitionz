@@ -6,7 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="3dp"
     android:layout_marginTop="7dp"
-    app:cardBackgroundColor="@color/bluematch"
+    app:cardBackgroundColor="@color/blue"
     app:cardCornerRadius="15dp"
     app:cardElevation="10dp">
 
@@ -19,7 +19,8 @@
             android:id="@+id/Dimage"
             android:layout_width="130dp"
             android:layout_height="130dp"
-            android:src="@drawable/newimg"></ImageView>
+            android:src="@drawable/newimg"
+            android:contentDescription="TODO" />
 
         <RatingBar
             android:id="@+id/Drating"
@@ -29,7 +30,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="3dp"
             android:numStars="5"
-            android:stepSize="0.5"></RatingBar>
+            android:stepSize="0.5" />
 
         <TextView
             android:id="@+id/subject"

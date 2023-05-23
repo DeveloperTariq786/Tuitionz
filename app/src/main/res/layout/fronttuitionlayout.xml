@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="170dp"
     android:layout_height="wrap_content"
     android:layout_marginStart="5dp"
     android:layout_marginTop="6dp"
     android:layout_marginBottom="6dp"
-    app:cardBackgroundColor="@color/bluematch"
-    app:cardCornerRadius="15dp"
-    app:cardElevation="10dp"
+    android:background="@drawable/gradient1"
     app:layout_anchorGravity="center_horizontal">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal">
-
+        android:orientation="vertical">
         <ImageView
             android:id="@+id/tuitionimage"
             android:layout_width="170dp"
@@ -25,40 +21,66 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/newimg" />
-
-        <TextView
-            android:id="@+id/address"
-            android:layout_width="0dp"
+            app:srcCompat="@drawable/newimg"/>
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/bluematch"
             android:gravity="center_horizontal"
-            android:text="SelfLearning"
-            android:textColor="#5D4037"
-            android:textSize="20sp"
-            android:textStyle="italic"
-            app:cardBackgroundColor="@color/bluematch"
-            app:layout_constraintBottom_toBottomOf="@+id/tuitionimage"
-            app:layout_constraintEnd_toEndOf="@+id/tuitionimage"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tuitionimage"
-            app:layout_constraintTop_toTopOf="@+id/tuitionimage"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <RatingBar
-            android:id="@+id/rating"
-            style="@style/Widget.AppCompat.RatingBar.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            app:cardBackgroundColor="@color/bluematch"
-            android:numStars="5"
-            android:stepSize="0.5"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/tuitionimage"
-            app:layout_constraintStart_toStartOf="@+id/tuitionimage"
-            app:layout_constraintTop_toBottomOf="@+id/tuitionimage"
-            tools:ignore="SpeakableTextPresentCheck" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.cardview.widget.CardView>
+            android:orientation="horizontal">
+            <RatingBar
+                android:id="@+id/rating"
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                app:cardBackgroundColor="@color/blue"
+                android:numStars="5"
+                android:stepSize="0.5"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/numofrating"
+                android:text="(3)">
+            </TextView>
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:padding="2dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="exam"
+                android:textColor="@color/white">
+            </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tuition Name"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+               android:layout_alignParentEnd="true">
+            </TextView>
+        </RelativeLayout>
+        <RelativeLayout
+            android:padding="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SelfLearning"
+                android:textColor="@color/white"
+                android:textSize="12sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KIE"
+                android:textColor="@color/white"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/tuitionname">
+            </TextView>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

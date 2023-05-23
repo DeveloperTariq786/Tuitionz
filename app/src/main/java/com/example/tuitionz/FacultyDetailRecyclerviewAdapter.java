@@ -36,7 +36,6 @@ public class FacultyDetailRecyclerviewAdapter extends RecyclerView.Adapter<Facul
         holder.fprofile.setImageResource(modal.getFimage());
         holder.frate.setRating(modal.getFrating());
         holder.fname.setText(modal.getFname());
-        holder.freview.setText(modal.getFreview());
     }
 
     @Override
@@ -48,13 +47,11 @@ public class FacultyDetailRecyclerviewAdapter extends RecyclerView.Adapter<Facul
         ImageView fprofile;
         RatingBar frate;
         TextView fname;
-         TextView  freview;
         public viewHolder(@NonNull View itemView) {
             super(itemView);
             fprofile=itemView.findViewById(R.id.facultyProfile);
             frate=itemView.findViewById(R.id.facultyrate);
             fname=itemView.findViewById(R.id.facultyName);
-            freview=itemView.findViewById(R.id.facultyReviews);
         }
     }
 }

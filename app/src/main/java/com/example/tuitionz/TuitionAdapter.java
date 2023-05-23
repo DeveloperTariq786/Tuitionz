@@ -53,6 +53,10 @@ public class TuitionAdapter extends RecyclerView.Adapter<TuitionAdapter.viewHold
     public int getItemCount() {
         return list.size();
     }
+    public void UpDatelist(ArrayList<TuitionModalClass> filterlist){
+        list=filterlist;
+        notifyDataSetChanged();
+    }
 
     @Override
     public Filter getFilter() {
@@ -68,7 +72,7 @@ public class TuitionAdapter extends RecyclerView.Adapter<TuitionAdapter.viewHold
            else {
 
                for (TuitionModalClass modalClass: newlist){
-                   if (modalClass.Address.toLowerCase().trim().contains(keyword.toString().toLowerCase()))
+                   if (modalClass.Address.toLowerCase().trim().contains(keyword.toString().toLowerCase().trim()))
                        filterlist.add(modalClass);
                }
            }
@@ -78,8 +82,7 @@ public class TuitionAdapter extends RecyclerView.Adapter<TuitionAdapter.viewHold
         }
 
         @Override
-        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {
-            list.clear();
+        protected void publishResults(CharSequence charSequence, FilterResults filterResults) {list.clear();
           list.addAll((ArrayList)filterResults.values);
            notifyDataSetChanged();
 

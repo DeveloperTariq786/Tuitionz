@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/roundtopcornerreview"
+    tools:context=".TuitionFilterFragment">
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HighRating"
+        android:id="@+id/HighRating"
+        android:textColor="@color/white">
+    </CheckBox><CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LowRating"
+        android:id="@+id/LowRating"
+        android:textColor="@color/white">
+    </CheckBox>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/apply"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="@color/blue"
+        android:text="Apply" />
+</LinearLayout>

@@ -1,72 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#233A66"
-    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/gradient1"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
-    <androidx.cardview.widget.CardView
-        android:layout_width="350dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="3dp"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="30dp">
-        <com.denzcoskun.imageslider.ImageSlider
-            android:id="@+id/image_slider"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:iss_auto_cycle="true"
-            app:iss_delay="4000"
-            app:iss_period="4000"
-            app:iss_text_align="CENTER" />
-    </androidx.cardview.widget.CardView>
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#233A66"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
+    </FrameLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_marginTop="5dp"
-            android:layout_height="wrap_content">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="230dp"
-                android:layout_height="35dp"
-                android:layout_gravity="left"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/bluematch"
-                app:cardCornerRadius="40dp">
-                <SearchView
-                    android:id="@+id/Search"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal" />
-            </androidx.cardview.widget.CardView>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginRight="15dp"
-                android:gravity="end"
-                android:paddingTop="5dp"
-                android:text="Filter"
-                android:textColor="#F6F2F2"
-                android:textSize="16sp"
-                app:backgroundTint="@color/bluematch"
-                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-        </RelativeLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/TuitionRecycleView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp" />
-    </LinearLayout>
-</LinearLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/btnView"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/roundcorner"
+        android:elevation="5dp"
+        app:itemIconSize="25dp"
+        app:itemIconTint="@color/green"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottomnavmenu" />
+</RelativeLayout>
